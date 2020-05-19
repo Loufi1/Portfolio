@@ -10,9 +10,6 @@
     background-size: cover;
     position: relative;
     z-index: 0;
-
-    opacity: 100%;
-
     width: 100%;
     height: 100vh;
 }
@@ -28,19 +25,24 @@
     z-index: -1;
 }
 
-.title {
-    color: white;
-    font-weight: bold;
-}
-
 .project-page {
     background-color: #001423;
     background-size: cover;
     position: relative;
     z-index: 0;
-
     opacity: 100%;
-
     width: 100%;
     height: 100vh;
+    animation: fadeIn 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 100%}
+}
+
+.title {
+    color: white;
+    font-weight: bold;
 }

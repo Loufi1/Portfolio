@@ -7,9 +7,9 @@ export default class LandingPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.opacity = 100;
         this.state = {
             page: 0,
+            opacity_1: 100,
         }
     }
     componentDidMount() {
@@ -21,29 +21,26 @@ export default class LandingPage extends React.Component {
     }
 
     handleScroll(event) {
-        if (this.opacity === 0)
+        if (this.state.opacity_1 === 0)
             this.setState({page: 1});
         else if (this.state.page !== 0)
             this.setState({page: 0});
 
-        if (event.deltaY > 0 && this.opacity !== 0) {
-            this.opacity = this.opacity - FADE_RATIO;
-            if (this.state.page === 0)
-                document.getElementById("App").style.opacity = this.opacity.toString() + '%';
-        } else if (event.deltaY < 0 && this.opacity !== 100) {
-            this.opacity = this.opacity + FADE_RATIO;
-            if (this.state.page === 0)
-                document.getElementById("App").style.opacity = this.opacity.toString() + '%';
+        if (event.deltaY > 0 && this.state.opacity_1 !== 0) {
+            this.setState({opacity_1: this.state.opacity_1 - FADE_RATIO});
+        } else if (event.deltaY < 0 && this.state.opacity_1 !== 100) {
+            this.setState({opacity_1: this.state.opacity_1 + FADE_RATIO});
         }
     }
 
     render() {
+        console.log(this.state.opacity_1);
         return (
             <div className="App">
                 {
                     this.state.page === 0
                     ?
-                        <div className="background-image" id="App">
+                        <div className="background-image" id="App" style={{opacity: this.state.opacity_1 + '%'}}>
                             <Container fluid={true}>
                                 <Row className="align-content-center">
                                     <Col className="mx-auto mt-5" style={{textAlign: 'center'}} xs={4}>
@@ -53,11 +50,11 @@ export default class LandingPage extends React.Component {
                             </Container>
                         </div>
                     :
-                        <div className="project-page" style={{opacity: '100%'}}>
+                        <div className="project-page">
                             <Container fluid={true}>
                                 <Row className="align-content-center">
                                     <Col className="mx-auto mt-5" style={{textAlign: 'center'}} xs={4}>
-                                        <h1 className="title">Loufi</h1>
+                                        <h1 className="title">Projects</h1>
                                     </Col>
                                 </Row>
                             </Container>
