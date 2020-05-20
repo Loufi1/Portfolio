@@ -39,7 +39,6 @@ export default class LandingPage extends React.Component {
             page: 1,
             opacity_1: 0,
         });
-        console.log('clock');
     }
 
     render() {
@@ -51,31 +50,31 @@ export default class LandingPage extends React.Component {
                         <div className="background-image" id="App" style={{opacity: this.state.opacity_1 + '%'}}>
                             <Container fluid={true} style={{height: '100%'}} className="">
                                 <Row className="align-content-center">
-                                    <Col className="mx-auto mt-5" style={{textAlign: 'center'}} xs={4}>
+                                    <Col className="mx-auto mt-5" style={{textAlign: 'center'}} md={4} xs={12}>
                                         <h1>Louis-Frédéric Fortier</h1>
                                     </Col>
                                 </Row>
                                 <Row className="mt-5">
                                     <Container className="mt-5">
                                         <Row className="mt-5">
-                                            <Col>
+                                            <Col xs={12} md={4} className="mb-3">
                                                 <CustomCard title='Projects &#128187;' onClick={() => this.gotoProjects()}/>
                                             </Col>
-                                            <Col>
+                                            <Col xs={12} md={4} className="mb-3">
                                                 <CustomCard title='About &#129488;'/>
                                             </Col>
-                                            <Col>
+                                            <Col xs={12} md={4} className="mb-3">
                                                 <CustomCard title='Courses &#127891;'/>
                                             </Col>
                                         </Row>
                                     </Container>
                                 </Row>
-                                <Row style={{marginTop: '22%'}} className="align-items-end">
-                                    <Col className="my-auto" align='center' xs={{span: 2, offset: 5}}>
+                                <Row className="fixed-bottom mb-3">
+                                    <Col className="my-auto" align='center' md={{span: 2, offset: 5}}>
                                         <Image className="scroll-bottom" height={50} src={require('../../assets/scroll-bottom.png')}/>
                                     </Col>
-                                    <Col className="credits mt-3" xs={{span: 2, offset: 3}}>
-                                        <span className="ml-5">Made with &#10084; by <a href='https://github.com/Loufi1' className='link'>Loufi</a></span>
+                                    <Col className="credits mt-4" xs={12} md={{span: 2, offset: 3}} style={{textAlign: 'center'}}>
+                                        <span>Made with &#10084; by <a href='https://github.com/Loufi1' className='link'>Loufi</a></span>
                                     </Col>
                                 </Row>
                             </Container>
