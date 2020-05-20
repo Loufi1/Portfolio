@@ -3,6 +3,7 @@
     height: 100vh;
     overflow: auto;
     background-color: #001423;
+    color: #001423;
 }
 
 .background-image {
@@ -42,7 +43,19 @@
     to {opacity: 100%}
 }
 
-.title {
+h1 {
     color: white;
     font-weight: bold;
+}
+
+p {
+    color: white;
+}
+
+.credits {
+    color: white;
+}
+
+.link {
+    color: red;
 }
