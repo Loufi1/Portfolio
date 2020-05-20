@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Row, Container} from "react-bootstrap";
+import {Col, Row, Container, Image} from "react-bootstrap";
 import CustomCard from "../../components/card";
 
 const FADE_RATIO = 5;
@@ -70,8 +70,11 @@ export default class LandingPage extends React.Component {
                                         </Row>
                                     </Container>
                                 </Row>
-                                <Row style={{marginTop: '23%'}} className="align-items-end">
-                                    <Col className="credits" xs={{span: 2, offset: 10}}>
+                                <Row style={{marginTop: '22%'}} className="align-items-end">
+                                    <Col className="my-auto" align='center' xs={{span: 2, offset: 5}}>
+                                        <Image className="scroll-bottom" height={50} src={require('../../assets/scroll-bottom.png')}/>
+                                    </Col>
+                                    <Col className="credits mt-3" xs={{span: 2, offset: 3}}>
                                         <span className="ml-5">Made with &#10084; by <a href='https://github.com/Loufi1' className='link'>Loufi</a></span>
                                     </Col>
                                 </Row>
