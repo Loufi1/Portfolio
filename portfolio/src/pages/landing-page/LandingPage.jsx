@@ -43,6 +43,9 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
+
+        const imageSize = window.innerWidth / 5;
+
         return (
             <div className="App">
                 {
@@ -98,6 +101,7 @@ export default class LandingPage extends React.Component {
                                                         <p>
                                                             Javascript-blockchain is a local blockchain I made for learning purpose.<br/>
                                                         </p>
+                                                        <Image height={imageSize} src={require('../../assets/blockchain.png')}/>
                                                     </Col>
                                                 </Row>
                                             </Carousel.Item>
@@ -108,6 +112,7 @@ export default class LandingPage extends React.Component {
                                                         <p>
                                                             It contains many widgets to create your own application.
                                                         </p>
+                                                        <Image height={imageSize} src={require('../../assets/uikit.png')}/>
                                                     </Col>
                                                 </Row>
                                             </Carousel.Item>
@@ -116,8 +121,20 @@ export default class LandingPage extends React.Component {
                                                     <Col xs={6} className="mx-auto" style={{textAlign: 'center'}}>
                                                         <h3>Area</h3>
                                                         <p>
-                                                            Area is an IFTT / Zappier like.
+                                                            Area is an IFTTT / Zappier like.
                                                         </p>
+                                                        <Image height={imageSize} src={require('../../assets/area.png')}/>
+                                                    </Col>
+                                                </Row>
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <Row className="mb-5">
+                                                    <Col xs={6} className="mx-auto" style={{textAlign: 'center'}}>
+                                                        <h3>Buzzle</h3>
+                                                        <p>
+                                                            Buzzle is an intelligent alarm who handle traffic problems.
+                                                        </p>
+                                                        <Image height={imageSize} src={require('../../assets/Buzzle.png')}/>
                                                     </Col>
                                                 </Row>
                                             </Carousel.Item>
