@@ -78,3 +78,7 @@ p {
         font-size: 5vw !important;
     }
 }
+
+.carousel-caption {
+    position: inherit !important;
+}

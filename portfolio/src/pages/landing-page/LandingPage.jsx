@@ -1,6 +1,7 @@
 import React from 'react';
 import {Col, Row, Container, Image} from "react-bootstrap";
 import CustomCard from "../../components/card";
+import Carousel from "react-bootstrap/Carousel";
 
 const FADE_RATIO = 5;
 
@@ -85,6 +86,42 @@ export default class LandingPage extends React.Component {
                                 <Row className="align-content-center">
                                     <Col className="mx-auto mt-5" style={{textAlign: 'center'}} xs={4}>
                                         <h1>Projects</h1>
+                                    </Col>
+                                </Row>
+                                <Row className="mt-5">
+                                    <Col className="mt-5">
+                                        <Carousel style={{color: 'white', cursor: 'pointer'}}>
+                                            <Carousel.Item>
+                                                <Row className="mb-5">
+                                                    <Col xs={6} className="mx-auto" style={{textAlign: 'center'}}>
+                                                        <h3>Javascript Based Blockchain</h3>
+                                                        <p>
+                                                            Javascript-blockchain is a local blockchain I made for learning purpose.<br/>
+                                                        </p>
+                                                    </Col>
+                                                </Row>
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <Row className="mb-5">
+                                                    <Col xs={6} className="mx-auto" style={{textAlign: 'center'}}>
+                                                        <h3>Flutter ui-kit</h3>
+                                                        <p>
+                                                            It contains many widgets to create your own application.
+                                                        </p>
+                                                    </Col>
+                                                </Row>
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <Row className="mb-5">
+                                                    <Col xs={6} className="mx-auto" style={{textAlign: 'center'}}>
+                                                        <h3>Area</h3>
+                                                        <p>
+                                                            Area is an IFTT / Zappier like.
+                                                        </p>
+                                                    </Col>
+                                                </Row>
+                                            </Carousel.Item>
+                                        </Carousel>
                                     </Col>
                                 </Row>
                             </Container>

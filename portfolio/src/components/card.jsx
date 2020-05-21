@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 const CustomCard = (props) => {
     return (
         <Card style={{cursor: 'pointer'}} onClick={props.onClick}>
-            <Card.Body>
+            <Card.Body className="mx-auto">
                 <Card.Title>{props.title}</Card.Title>
             </Card.Body>
         </Card>
