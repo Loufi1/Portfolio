@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Row, Container, Image} from "react-bootstrap";
+import {Col, Row, Container} from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 
 const FADE_RATIO = 5;
@@ -59,9 +59,6 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
-
-        const imageSize = window.innerWidth / 5;
-
         return (
             <>
             {
@@ -89,7 +86,7 @@ export default class LandingPage extends React.Component {
                                     <img alt={''} src={require('../../assets/linkedin.png')} height={75} className="ml-3 medias"/>
                                 </Col>
                             </Row>
-                            <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/code.svg")} alt={''} height={500} />
+                            <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/code.svg")} alt={''} height={window.innerWidth / 3} />
                         </Container>
                     </div>
                 :
@@ -100,7 +97,23 @@ export default class LandingPage extends React.Component {
                                     <h1>Projects</h1>
                                 </Col>
                             </Row>
-                            <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/project.svg")} alt={''} height={500} />
+                            <Row className="mt-5">
+                                <Col className="text-center mt-5 ml-5 projects" xs={4}>
+                                    <img src={require('../../assets/Buzzle.png')} height={75}/>
+                                </Col>
+                                <Col className="text-center mt-5 ml-5 projects" xs={2}>
+                                    <img src={require('../../assets/area.png')} height={75}/>
+                                </Col>
+                            </Row>
+                            <Row className="mt-5">
+                                <Col className="text-center mt-5 ml-5 projects" xs={2}>
+                                    <img src={require('../../assets/uikit.png')} height={75}/>
+                                </Col>
+                                <Col className="text-center mt-5 ml-5 projects" xs={2}>
+                                    <img src={require('../../assets/blockchain.png')} height={75}/>
+                                </Col>
+                            </Row>
+                            <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/project.svg")} alt={''} height={window.innerWidth / 3} />
                         </Container>
                     </div>
             }

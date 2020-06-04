@@ -63,6 +63,10 @@ p {
     filter: invert(42%) sepia(96%) saturate(1346%) hue-rotate(335deg) brightness(99%) contrast(90%);
 }
 
+.projects {
+    cursor: pointer;
+}
+
 .credits {
     color: #001423;
 }
