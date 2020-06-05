@@ -99,7 +99,7 @@ export default class LandingPage extends React.Component {
                             </Row>
                             <Row className="mt-5 ml-2 row-table">
                                 <Col className="text-center mt-5 projects row-cell" xs={3}>
-                                    <Card>
+                                    <Card style={{height: '100%'}}>
                                         <Card.Header as="h5">Buzzle</Card.Header>
                                         <Card.Body>
                                             <Card.Title>
@@ -120,7 +120,7 @@ export default class LandingPage extends React.Component {
                                     </Card>
                                 </Col>
                                 <Col className="text-center mt-5 projects row-cell" xs={3}>
-                                    <Card>
+                                    <Card style={{height: '100%'}}>
                                         <Card.Header as="h5">Area</Card.Header>
                                         <Card.Body>
                                             <Card.Title>
@@ -143,7 +143,7 @@ export default class LandingPage extends React.Component {
                             </Row>
                             <Row className="mt-5 ml-2 row-table">
                                 <Col className="text-center mt-1 projects row-cell" xs={3}>
-                                    <Card>
+                                    <Card style={{height: '100%'}}>
                                         <Card.Header as="h5">Uikit</Card.Header>
                                         <Card.Body>
                                             <Card.Title>
@@ -164,7 +164,7 @@ export default class LandingPage extends React.Component {
                                     </Card>
                                 </Col>
                                 <Col className="text-center mt-1 ml-2 projects row-cell" xs={3}>
-                                    <Card>
+                                    <Card style={{height: '100%'}}>
                                         <Card.Header as="h5">Javascript blockchain</Card.Header>
                                         <Card.Body>
                                             <Card.Title>
