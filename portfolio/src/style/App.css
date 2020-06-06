@@ -20,7 +20,22 @@
     background-position-x: right;
     background-size: 50%;
     opacity: 100%;
-    animation: fadeIn 3s;
+    animation: fadeIn 2s;
+    animation-iteration-count: 1;
+    font-family: "Poppins";
+}
+
+.about-page {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: white;
+    background-image: url(../assets/TopBackground.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: 50%;
+    opacity: 100%;
+    animation: fadeIn 2s;
     animation-iteration-count: 1;
     font-family: "Poppins";
 }
@@ -62,6 +77,13 @@ p {
     color: #7A839E;
     margin: 0;
     font-size: 0.75vw !important;
+    z-index: 9999;
+}
+
+.about-me {
+    color: #7A839E;
+    margin: 0;
+    font-size: 1vw !important;
     z-index: 9999;
 }
 

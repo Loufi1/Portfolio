@@ -10,44 +10,55 @@ export default class LandingPage extends React.Component {
 
         this.state = {
             page: 0,
+            opacity: 100,
             opacity_1: 100,
-
+            opacity_2: 100,
             is_mobile: window.innerWidth < 600,
-            secret_margin_top: -141,
         };
     }
+
     componentDidMount() {
         window.addEventListener('mousewheel', this.handleScroll.bind(this));
-        window.addEventListener('keydown', this.handleKeydown.bind(this));
     }
 
     componentWillUnmount() {
         window.removeEventListener('mousewheel', this.handleScroll.bind(this));
     }
 
-    handleKeydown(event) {
-        if (event.key === 'ArrowDown') {
-            this.setState({
-                secret_margin_top: this.state.secret_margin_top + 1,
-            })
-        }
-        if (event.key === 'ArrowUp') {
-            this.setState({
-                secret_margin_top: this.state.secret_margin_top - 1,
-            })
-        }
-    }
-
     handleScroll(event) {
         if (this.state.opacity_1 === 0)
             this.setState({page: 1});
+        else if (this.state.opacity_2 === 0)
+            this.setState({page: 2});
         else if (this.state.page !== 0)
             this.setState({page: 0});
 
-        if (event.deltaY > 0 && this.state.opacity_1 !== 0) {
-            this.setState({opacity_1: this.state.opacity_1 - FADE_RATIO});
-        } else if (event.deltaY < 0 && this.state.opacity_1 !== 100) {
-            this.setState({opacity_1: this.state.opacity_1 + FADE_RATIO});
+        if (event.deltaX === -0 && this.state.opacity_2 === 100) {
+            if (event.deltaY > 0 && this.state.opacity_1 !== 0) {
+                this.setState({
+                    opacity_1: this.state.opacity_1 - FADE_RATIO,
+                    opacity: this.state.opacity - FADE_RATIO,
+                });
+            } else if (event.deltaY < 0 && this.state.opacity_1 !== 100) {
+                this.setState({
+                    opacity_1: this.state.opacity_1 + FADE_RATIO,
+                    opacity: this.state.opacity + FADE_RATIO,
+                });
+            }
+        } else if (event.deltaY === -0 && this.state.opacity_1 === 100) {
+            this.setState({opacity_1: 100});
+
+            if (event.deltaX > 0 && this.state.opacity_2 !== 0) {
+                this.setState({
+                    opacity_2: this.state.opacity_2 - FADE_RATIO,
+                    opacity: this.state.opacity - FADE_RATIO,
+                });
+            } else if (event.deltaX < 0 && this.state.opacity_2 !== 100) {
+                this.setState({
+                    opacity_2: this.state.opacity_2 + FADE_RATIO,
+                    opacity: this.state.opacity + FADE_RATIO,
+                });
+            }
         }
     }
 
@@ -64,7 +75,7 @@ export default class LandingPage extends React.Component {
             {
                 this.state.page === 0
                 ?
-                    <div className="main-page" style={{ opacity: `${this.state.opacity_1}%` }}>
+                    <div className="main-page" style={{ opacity: `${this.state.opacity}%` }}>
                         <Container fluid={true}>
                             <Row className="mt-2">
                                 <Col>
@@ -90,6 +101,8 @@ export default class LandingPage extends React.Component {
                         </Container>
                     </div>
                 :
+                    this.state.page === 1
+                ?
                     <div className="project-page">
                         <Container fluid={true}>
                             <Row className="mt-2">
@@ -186,6 +199,76 @@ export default class LandingPage extends React.Component {
                                 </Col>
                             </Row>
                             <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/project.svg")} alt={''} height={window.innerWidth / 3} />
+                        </Container>
+                    </div>
+                    :
+                    <div className="about-page">
+                        <Container fluid={true}>
+                            <Row className="mt-2">
+                                <Col>
+                                    <h1>About me</h1>
+                                </Col>
+                            </Row>
+                            <Row className="mt-4">
+                                <Col xs={6} className='ml-1'>
+                                    <span className='about-me'>
+                                        Hello, I am currently a student in IT at Epitech Paris. <br/>
+                                        I already worked on many web, software, and mobile projects, at Epitech and in different companies. <br/>
+                                        When I don't code I make music. This is my second passion !
+                                    </span>
+                                </Col>
+                            </Row>
+                            <Row className="mt-5">
+                                <Col>
+                                    <h2>Skills</h2>
+                                </Col>
+                            </Row>
+                            <Row className="mt-1">
+                                <Col xs={5} className='ml-1'>
+                                   <Container fluid={true}>
+                                       <Row className='mt-5'>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/react.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/angular.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/flutter.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/nodejs.png')} height={75}/>
+                                           </Col>
+                                       </Row>
+                                       <Row className='mt-4'>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/C.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/cpp.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/docker.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/mysql.png')} height={75}/>
+                                           </Col>
+                                       </Row>
+                                       <Row className='mt-4'>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/git.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/github.png')} height={75}/>
+                                           </Col>
+                                           <Col className='text-center'>
+                                               <img alt={''} src={require('../../assets/gitlab.png')} height={75}/>
+                                           </Col>
+                                       </Row>
+                                   </Container>
+                                </Col>
+                            </Row>
+                            <img style={{ right: 40, bottom: 50, position: 'absolute'}} src={require("../../assets/about.svg")} alt={''} height={window.innerWidth / 3} />
                         </Container>
                     </div>
             }
